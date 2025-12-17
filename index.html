@@ -852,6 +852,75 @@
 
         @media (max-width: 1024px) {
             .nav-links { display: none; }
+            
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                width: 30px;
+                height: 30px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                z-index: 1001;
+            }
+            .hamburger span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background: var(--gray-900);
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+            
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--white);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+            .mobile-menu.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            .mobile-menu a {
+                font-size: 1.25rem;
+                font-weight: 600;
+                color: var(--gray-900);
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            .mobile-menu a:hover {
+                color: var(--orange);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .hamburger { display: none; }
+            .mobile-menu { display: none; }
+        }
             .hero { grid-template-columns: 1fr; min-height: auto; padding-bottom: 3rem; }
             .hero-content { padding: 3rem 2rem; }
             .hero-image { display: none; }
@@ -906,6 +975,22 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <a href="tel:7057952878" class="nav-cta">705-795-2878</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="plumbing.html">Plumbing</a>
+            <a href="bathrooms.html">Bathroom Renovations</a>
+            <a href="water-heaters.html">Water Heaters</a>
+            <a href="water-treatment.html">Water Treatment</a>
+            <a href="gas-fitting.html">Gas Fitting</a>
+            <a href="emergency.html">Emergency Service</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
@@ -1149,6 +1234,15 @@
             } else {
                 nav.classList.remove('scrolled');
             }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
     </script>
 </body>
