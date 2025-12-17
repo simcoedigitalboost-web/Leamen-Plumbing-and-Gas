@@ -146,6 +146,50 @@
         .mobile-menu a:hover {
             color: #e85a1e;
         }
+        
+        .mobile-dropdown {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-dropdown-toggle {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1f2e;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0;
+        }
+        .mobile-dropdown-toggle .arrow {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+        .mobile-dropdown-toggle.active .arrow {
+            transform: rotate(180deg);
+        }
+        .mobile-dropdown-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 1rem 0;
+            border-top: 1px solid #e9ecef;
+            border-bottom: 1px solid #e9ecef;
+            width: 100%;
+        }
+        .mobile-dropdown-content.active {
+            display: flex;
+        }
+        .mobile-dropdown-content a {
+            font-size: 1rem;
+            color: #5a6578;
+        }
         .mobile-menu a {
             font-size: 1.25rem;
             font-weight: 600;
@@ -155,6 +199,8 @@
         .mobile-menu a:hover {
             color: #e85a1e;
         }
+        
+        
 
         @media (max-width: 1024px) {
             .hamburger { display: flex; }
@@ -173,6 +219,7 @@
         <div class="nav-container">
             <a href="index.html"><img src="images/logo.jpg" alt="Leamen Plumbing & Gas" class="logo"></a>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li class="nav-dropdown">
                     <a href="#">Services</a>
                     <div class="dropdown-menu">
@@ -185,6 +232,7 @@
                     </div>
                 </li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="service-areas.html">Service Areas</a></li>
                 <li><a href="gallery.html" class="active">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -198,13 +246,20 @@
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="plumbing.html">Plumbing</a>
-        <a href="bathrooms.html">Bathroom Renovations</a>
-        <a href="water-heaters.html">Water Heaters</a>
-        <a href="water-treatment.html">Water Treatment</a>
-        <a href="gas-fitting.html">Gas Fitting</a>
-        <a href="emergency.html">Emergency Service</a>
+        <a href="index.html">Home</a>
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-toggle" id="servicesToggle">Services <span class="arrow">▾</span></button>
+            <div class="mobile-dropdown-content" id="servicesContent">
+                <a href="plumbing.html">Plumbing</a>
+                <a href="bathrooms.html">Bathroom Renovations</a>
+                <a href="water-heaters.html">Water Heaters</a>
+                <a href="water-treatment.html">Water Treatment</a>
+                <a href="gas-fitting.html">Gas Fitting</a>
+                <a href="emergency.html">Emergency Service</a>
+            </div>
+        </div>
         <a href="about.html">About</a>
+        <a href="service-areas.html">Service Areas</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
     </div>
@@ -318,6 +373,14 @@
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        const servicesToggle = document.getElementById('servicesToggle');
+        const servicesContent = document.getElementById('servicesContent');
+        
+        servicesToggle.addEventListener('click', () => {
+            servicesToggle.classList.toggle('active');
+            servicesContent.classList.toggle('active');
         });
     </script>
 </body>

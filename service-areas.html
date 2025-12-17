@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/jpeg" href="images/logo.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Leamen Plumbing & Gas | Orillia Plumber</title>
-    <meta name="description" content="Licensed plumbers and gas fitters serving Orillia, Severn, and Oro-Medonte. Learn about Leamen Plumbing & Gas and our commitment to quality work.">
+    <title>Service Areas | Leamen Plumbing & Gas | Orillia, Severn, Oro-Medonte</title>
+    <meta name="description" content="Leamen Plumbing & Gas serves Orillia, Severn, Oro-Medonte and surrounding areas in Simcoe County. Licensed plumbers and gas fitters.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
             --gray-900: #1a1f2e;
         }
         html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--gray-900); }
+        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--gray-900); overflow-x: hidden; }
 
         /* Nav */
         .nav {
@@ -39,7 +39,7 @@
             display: flex; justify-content: space-between; align-items: center;
         }
         .logo { height: 55px; }
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--gray-600); font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: var(--blue-deep); }
         
@@ -50,13 +50,10 @@
             position: absolute; top: 100%; left: -1rem; min-width: 200px;
             background: var(--white); border-radius: 12px; padding: 0.75rem 0;
             box-shadow: 0 15px 50px rgba(0,0,0,0.15); opacity: 0; visibility: hidden;
-            transform: translateY(10px); transition: all 0.3s ease;
+            transform: translateY(10px); transition: all 0.3s ease; z-index: 100;
         }
         .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(5px); }
-        .dropdown-menu a {
-            display: block; padding: 0.65rem 1.25rem; color: var(--gray-600);
-            font-weight: 500; transition: all 0.2s;
-        }
+        .dropdown-menu a { display: block; padding: 0.65rem 1.25rem; color: var(--gray-600); font-weight: 500; }
         .dropdown-menu a:hover { background: var(--blue-pale); color: var(--blue-deep); }
         
         .nav-cta {
@@ -66,122 +63,7 @@
         }
         .nav-cta:hover { background: var(--blue-mid); transform: translateY(-2px); }
 
-        /* Page Header */
-        .page-header {
-            padding: 10rem 2rem 5rem;
-            background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
-            color: var(--white); text-align: center;
-        }
-        .page-header-label {
-            display: inline-flex; align-items: center; gap: 0.75rem;
-            font-size: 0.85rem; font-weight: 700; color: var(--blue-light);
-            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;
-        }
-        .page-header-label::before {
-            content: ''; width: 40px; height: 3px; background: var(--orange); border-radius: 2px;
-        }
-        .page-header-title {
-            font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800; margin-bottom: 1rem;
-        }
-        .page-header-text { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-
-        /* About Content */
-        .about-section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-        
-        .about-intro {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-            align-items: center; margin-bottom: 5rem;
-        }
-        .about-intro-content h2 {
-            font-family: 'Outfit', sans-serif; font-size: 2.25rem; font-weight: 700;
-            color: var(--gray-900); margin-bottom: 1.5rem;
-        }
-        .about-intro-content p {
-            font-size: 1.1rem; color: var(--gray-600); line-height: 1.9; margin-bottom: 1rem;
-        }
-        .about-intro-image {
-            border-radius: 20px; overflow: hidden; height: 450px;
-        }
-        .about-intro-image img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Values */
-        .values-section {
-            background: var(--white); padding: 4rem; border-radius: 24px;
-            margin-bottom: 5rem;
-        }
-        .values-section h2 {
-            font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 700;
-            text-align: center; margin-bottom: 3rem; color: var(--gray-900);
-        }
-        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .value-card { text-align: center; padding: 2rem; }
-        .value-icon {
-            width: 70px; height: 70px; background: var(--blue-pale); border-radius: 16px;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 1.5rem; font-size: 1.75rem;
-        }
-        .value-card h3 {
-            font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 700;
-            margin-bottom: 0.75rem; color: var(--gray-900);
-        }
-        .value-card p { font-size: 0.95rem; color: var(--gray-600); line-height: 1.7; }
-
-        /* Service Area */
-        .area-section { text-align: center; margin-bottom: 5rem; }
-        .area-section h2 {
-            font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .area-section p { font-size: 1.1rem; color: var(--gray-600); margin-bottom: 2rem; }
-        .area-tags { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-        .area-tag {
-            background: var(--blue-pale); color: var(--blue-deep); padding: 0.75rem 1.5rem;
-            border-radius: 50px; font-weight: 600;
-        }
-
-        /* CTA */
-        .cta-section {
-            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
-            padding: 5rem 2rem; border-radius: 24px; text-align: center; color: var(--white);
-        }
-        .cta-section h2 {
-            font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800; margin-bottom: 1rem;
-        }
-        .cta-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
-        .cta-phone {
-            font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 800;
-            color: var(--white); text-decoration: none; padding: 0.75rem 2rem;
-            border: 3px solid var(--white); border-radius: 12px;
-            transition: all 0.3s; display: inline-block;
-        }
-        .cta-phone:hover { background: var(--white); color: var(--orange); }
-
-        /* Footer */
-        .footer { background: var(--gray-900); padding: 5rem 2rem 2rem; color: var(--white); margin-top: 5rem; }
-        .footer-container {
-            max-width: 1400px; margin: 0 auto;
-            display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem;
-        }
-        .footer-brand img { height: 50px; margin-bottom: 1.5rem; }
-        .footer-brand p { color: var(--gray-400); line-height: 1.8; font-size: 0.95rem; }
-        .footer-title {
-            font-family: 'Outfit', sans-serif; font-weight: 700;
-            font-size: 1.1rem; margin-bottom: 1.5rem;
-        }
-        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-        .footer-links a { color: var(--gray-400); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
-        .footer-links a:hover { color: var(--white); }
-        .footer-bottom {
-            max-width: 1400px; margin: 4rem auto 0; padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex; justify-content: space-between;
-            color: var(--gray-400); font-size: 0.9rem;
-        }
-
-        
-        /* Hamburger menu */
+        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -194,24 +76,19 @@
             cursor: pointer;
             padding: 0;
             z-index: 10000;
+            position: relative;
         }
         .hamburger span {
             display: block;
             width: 100%;
             height: 3px;
-            background: var(--gray-warm, #5a6578);
+            background: var(--gray-900);
             border-radius: 2px;
             transition: all 0.3s ease;
         }
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
         
         .mobile-menu {
             position: fixed;
@@ -229,24 +106,18 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 9999;
-            overflow-y: auto;
             padding: 80px 20px 40px;
             box-sizing: border-box;
+            overflow-y: auto;
         }
-        .mobile-menu.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .mobile-menu.active { opacity: 1; visibility: visible; }
         .mobile-menu a {
             font-size: 1.25rem;
             font-weight: 600;
             color: #1a1f2e;
             text-decoration: none;
-            transition: color 0.3s;
         }
-        .mobile-menu a:hover {
-            color: #e85a1e;
-        }
+        .mobile-menu a:hover { color: #e85a1e; }
         
         .mobile-dropdown {
             display: flex;
@@ -296,13 +167,163 @@
             .hamburger { display: flex; }
             .mobile-menu { display: flex; }
             .nav-links { display: none; }
-            .about-intro { grid-template-columns: 1fr; }
-            .values-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 10rem 2rem 5rem;
+            background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+            color: var(--white); text-align: center;
+        }
+        .page-header-label {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            font-size: 0.85rem; font-weight: 700; color: var(--blue-light);
+            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;
+        }
+        .page-header-label::before {
+            content: ''; width: 40px; height: 3px; background: var(--orange); border-radius: 2px;
+        }
+        .page-header-title {
+            font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800; margin-bottom: 1rem;
+        }
+        .page-header-text { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        /* Areas Content */
+        .areas-section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        
+        .areas-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .areas-intro h2 {
+            font-family: 'Outfit', sans-serif; font-size: 2.25rem; font-weight: 700;
+            color: var(--gray-900); margin-bottom: 1rem;
+        }
+        .areas-intro p {
+            font-size: 1.1rem; color: var(--gray-600); line-height: 1.8; max-width: 700px; margin: 0 auto;
+        }
+
+        /* Areas Grid */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .area-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(26, 75, 124, 0.1);
+            border-color: var(--blue-light);
+        }
+        .area-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        .area-card p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        .area-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--blue-pale);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        /* Also Serving */
+        .also-serving {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .also-serving h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .also-serving-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .also-serving-tag {
+            background: var(--blue-pale);
+            color: var(--blue-deep);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
+            padding: 4rem 2rem; border-radius: 24px; text-align: center; color: var(--white);
+        }
+        .cta-section h2 {
+            font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800; margin-bottom: 1rem;
+        }
+        .cta-section p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
+        .cta-phone {
+            font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800;
+            color: var(--white); text-decoration: none; padding: 0.75rem 2rem;
+            border: 3px solid var(--white); border-radius: 12px;
+            transition: all 0.3s; display: inline-block;
+        }
+        .cta-phone:hover { background: var(--white); color: var(--orange); }
+
+        /* Footer */
+        .footer { background: var(--gray-900); padding: 5rem 2rem 2rem; color: var(--white); margin-top: 5rem; }
+        .footer-container {
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem;
+        }
+        .footer-brand img { height: 50px; margin-bottom: 1.5rem; }
+        .footer-brand p { color: var(--gray-400); line-height: 1.8; font-size: 0.95rem; }
+        .footer-title {
+            font-family: 'Outfit', sans-serif; font-weight: 700;
+            font-size: 1.1rem; margin-bottom: 1.5rem;
+        }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .footer-links a { color: var(--gray-400); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-bottom {
+            max-width: 1400px; margin: 4rem auto 0; padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex; justify-content: space-between;
+            color: var(--gray-400); font-size: 0.9rem;
+        }
+
+        @media (max-width: 1024px) {
+            .areas-grid { grid-template-columns: 1fr; }
             .footer-container { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
-            .about-section { padding: 3rem 1rem; }
-            .values-section { padding: 2rem; }
+            .areas-section { padding: 3rem 1rem; }
+            .also-serving { padding: 2rem; }
             .footer-container { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
         }
@@ -325,8 +346,8 @@
                         <a href="emergency.html">Emergency Service</a>
                     </div>
                 </li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="service-areas.html">Service Areas</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service-areas.html" class="active">Service Areas</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -358,61 +379,51 @@
         <a href="contact.html">Contact</a>
     </div>
 
-
     <section class="page-header">
-        <div class="page-header-label">About Us</div>
-        <h1 class="page-header-title">Who We Are</h1>
-        <p class="page-header-text">Licensed plumbers and gas fitters serving Simcoe County with precision and pride.</p>
+        <div class="page-header-label">Where We Work</div>
+        <h1 class="page-header-title">Service Areas</h1>
+        <p class="page-header-text">Proudly serving Simcoe County with licensed plumbing and gas fitting services.</p>
     </section>
 
-    <section class="about-section">
-        <div class="about-intro">
-            <div class="about-intro-content">
-                <h2>Quality Work, Every Time</h2>
-                <p>Leamen Plumbing & Gas serves homeowners and builders throughout Orillia, Severn, Oro-Medonte, and the surrounding areas. We handle everything from emergency repairs to custom new construction plumbing.</p>
-                <p>Our approach is straightforward: do the job right, keep the workspace clean, use quality materials, and stand behind our work. The mechanical room photos on this site aren't staged - that's how we leave every job.</p>
-                <p>Whether it's a midnight emergency call or a complete bathroom renovation, we bring the same level of precision and care to every pipe we touch.</p>
+    <section class="areas-section">
+        <div class="areas-intro">
+            <h2>Local Service You Can Trust</h2>
+            <p>We're based in the heart of Simcoe County and serve homeowners throughout the region. Whether you need emergency repairs or a full bathroom renovation, we're just a call away.</p>
+        </div>
+
+        <div class="areas-grid">
+            <div class="area-card">
+                <div class="area-icon">📍</div>
+                <h3>Orillia</h3>
+                <p>Our home base. Full plumbing, gas fitting, and renovation services for Orillia residents and businesses.</p>
             </div>
-            <div class="about-intro-image">
-                <img src="images/mechanical-room.jpg" alt="Our Work">
+            <div class="area-card">
+                <div class="area-icon">📍</div>
+                <h3>Severn</h3>
+                <p>Serving Washago, Coldwater, and communities throughout Severn Township.</p>
+            </div>
+            <div class="area-card">
+                <div class="area-icon">📍</div>
+                <h3>Oro-Medonte</h3>
+                <p>From Horseshoe Valley to Hawkestone, we cover all of Oro-Medonte Township.</p>
             </div>
         </div>
 
-        <div class="values-section">
-            <h2>What We Stand For</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">🔧</div>
-                    <h3>Quality Craftsmanship</h3>
-                    <p>We take pride in clean, organized work. Proper installations that look as good as they function.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">💬</div>
-                    <h3>Honest Communication</h3>
-                    <p>Transparent pricing, realistic timelines, and straight answers. No surprises on your invoice.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">⚡</div>
-                    <h3>Reliable Service</h3>
-                    <p>We show up when we say we will. Emergency service available when you need us most.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="area-section">
-            <h2>Serving Simcoe County</h2>
-            <p>Proudly serving residential customers throughout the region.</p>
-            <div class="area-tags">
-                <span class="area-tag">Orillia</span>
-                <span class="area-tag">Severn</span>
-                <span class="area-tag">Oro-Medonte</span>
-                <span class="area-tag">Surrounding Areas</span>
+        <div class="also-serving">
+            <h3>Also Serving</h3>
+            <div class="also-serving-list">
+                <span class="also-serving-tag">Ramara</span>
+                <span class="also-serving-tag">Gravenhurst</span>
+                <span class="also-serving-tag">Midland</span>
+                <span class="also-serving-tag">Penetanguishene</span>
+                <span class="also-serving-tag">Barrie</span>
+                <span class="also-serving-tag">Surrounding Areas</span>
             </div>
         </div>
 
         <div class="cta-section">
-            <h2>Ready to Get Started?</h2>
-            <p>Call us for a free estimate on your project.</p>
+            <h2>Not Sure If We Service Your Area?</h2>
+            <p>Give us a call - we're happy to help.</p>
             <a href="tel:7057952878" class="cta-phone">705-795-2878</a>
         </div>
     </section>
@@ -438,6 +449,7 @@
                 <h4 class="footer-title">Company</h4>
                 <ul class="footer-links">
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="service-areas.html">Service Areas</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -455,6 +467,7 @@
             <p>Licensed Plumbers & Gas Fitters</p>
         </div>
     </footer>
+
     <script>
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
