@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leamen Plumbing & Gas | Orillia's Premium Plumbing Contractor</title>
     <meta name="description" content="Licensed plumbing and gas fitting services in Orillia, Severn, and Oro-Medonte. Bathroom renovations, water heaters, water treatment, and emergency repairs.">
@@ -85,6 +86,7 @@
             display: flex;
             gap: 2.5rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -98,6 +100,22 @@
         .nav-links a:hover {
             color: var(--blue-deep);
         }
+
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > a { display: flex; align-items: center; gap: 0.35rem; }
+        .nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; }
+        .dropdown-menu {
+            position: absolute; top: 100%; left: -1rem; min-width: 200px;
+            background: var(--white); border-radius: 12px; padding: 0.75rem 0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15); opacity: 0; visibility: hidden;
+            transform: translateY(10px); transition: all 0.3s ease; z-index: 100;
+        }
+        .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(5px); }
+        .dropdown-menu a {
+            display: block; padding: 0.65rem 1.25rem; color: var(--gray-600);
+            font-weight: 500; transition: all 0.2s;
+        }
+        .dropdown-menu a:hover { background: var(--blue-pale); color: var(--blue-deep); }
 
         .nav-cta {
             background: var(--blue-deep);
@@ -872,17 +890,22 @@
                 <img src="images/logo.jpg" alt="Leamen Plumbing & Gas" class="logo">
             </a>
             <ul class="nav-links">
-                <li><a href="plumbing.html">Plumbing</a></li>
-                <li><a href="bathrooms.html">Bathrooms</a></li>
-                <li><a href="water-heaters.html">Water Heaters</a></li>
-                <li><a href="water-treatment.html">Water Treatment</a></li>
-                <li><a href="gas-fitting.html">Gas Fitting</a></li>
-                <li><a href="emergency.html">Emergency</a></li>
+                <li class="nav-dropdown">
+                    <a href="#">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="plumbing.html">Plumbing</a>
+                        <a href="bathrooms.html">Bathroom Renovations</a>
+                        <a href="water-heaters.html">Water Heaters</a>
+                        <a href="water-treatment.html">Water Treatment</a>
+                        <a href="gas-fitting.html">Gas Fitting</a>
+                        <a href="emergency.html">Emergency Service</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <a href="tel:7057952878" class="nav-cta">
-                <span>705-795-2878</span>
-            </a>
+            <a href="tel:7057952878" class="nav-cta">705-795-2878</a>
         </div>
     </nav>
 
