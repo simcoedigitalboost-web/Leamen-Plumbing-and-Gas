@@ -280,14 +280,93 @@
             opacity: 0.6;
         }
 
+        
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 30px;
+            height: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10000;
+            position: relative;
+        }
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #1a1f2e;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #ffffff !important;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 9999;
+            padding: 80px 20px 40px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-menu a {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1f2e;
+            text-decoration: none;
+        }
+        .mobile-menu a:hover {
+            color: #e85a1e;
+        }
+        .mobile-menu a {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1f2e;
+            text-decoration: none;
+        }
+        .mobile-menu a:hover {
+            color: #e85a1e;
+        }
+
         @media (max-width: 1024px) {
+            .hamburger { display: flex; }
+            .mobile-menu { display: flex; }
+            .nav-links { display: none; }
             .feature-grid { grid-template-columns: 1fr; }
             .feature-main { grid-row: span 1; min-height: 400px; }
             .content-intro { grid-template-columns: 1fr; gap: 2rem; }
             .footer-container { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
-            .nav-links { display: none; }
             .cta-banner { padding: 2rem; }
             .services-offered { padding: 2rem; }
             .footer-container { grid-template-columns: 1fr; text-align: center; }
@@ -322,19 +401,21 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                    </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="plumbing.html">Plumbing</a>
-            <a href="bathrooms.html">Bathroom Renovations</a>
-            <a href="water-heaters.html">Water Heaters</a>
-            <a href="water-treatment.html">Water Treatment</a>
-            <a href="gas-fitting.html">Gas Fitting</a>
-            <a href="emergency.html">Emergency Service</a>
-            <a href="about.html">About</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
+            </button>
         </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="plumbing.html">Plumbing</a>
+        <a href="bathrooms.html">Bathroom Renovations</a>
+        <a href="water-heaters.html">Water Heaters</a>
+        <a href="water-treatment.html">Water Treatment</a>
+        <a href="gas-fitting.html">Gas Fitting</a>
+        <a href="emergency.html">Emergency Service</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
     <!-- Page Hero -->
     <section class="page-hero">
