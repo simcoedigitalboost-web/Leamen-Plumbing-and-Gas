@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | Project Gallery | Leamen Plumbing & Gas</title>
+    <meta name="description" content="See our plumbing work in Orillia and Simcoe County. Bathroom renovations, water heater installations, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --blue-deep: #1a3a5c;
+            --blue-mid: #2d5a87;
+            --orange-fire: #e85d24;
+            --orange-glow: #f4a442;
+            --cream: #faf8f5;
+            --charcoal: #1a1a1a;
+            --gray-warm: #6b6560;
+            --white: #ffffff;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.6; }
+        
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 60px; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--charcoal); font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active { color: var(--orange-fire); }
+        .nav-phone { background: var(--blue-deep); color: var(--white); padding: 0.75rem 1.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        .nav-phone:hover { background: var(--orange-fire); }
+
+        .page-hero { padding: 10rem 2rem 5rem; background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%); color: var(--white); text-align: center; }
+        .page-hero-tag { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange-glow); margin-bottom: 1rem; }
+        .page-hero-title { font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1rem; }
+        .page-hero-text { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        .gallery-section { padding: 4rem 2rem; max-width: 1400px; margin: 0 auto; }
+
+        .gallery-category { margin-bottom: 4rem; }
+        .gallery-category h2 { font-family: 'Outfit', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--blue-deep); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 3px solid var(--orange-fire); display: inline-block; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
+        .gallery-item { height: 300px; background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; }
+        .gallery-item::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26, 58, 92, 0.7), transparent 50%); opacity: 0; transition: opacity 0.3s ease; }
+        .gallery-item:hover::before { opacity: 1; }
+        .gallery-item-label { position: absolute; bottom: 1.5rem; left: 1.5rem; color: var(--white); font-weight: 600; font-size: 1rem; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
+        .gallery-item:hover .gallery-item-label { opacity: 1; transform: translateY(0); }
+
+        .cta-banner { background: var(--orange-fire); padding: 4rem; text-align: center; color: var(--white); }
+        .cta-banner h3 { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+        .cta-banner p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
+        .cta-banner-phone { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--white); text-decoration: none; display: inline-block; padding: 1rem 2rem; border: 3px solid var(--white); transition: all 0.3s ease; }
+        .cta-banner-phone:hover { background: var(--white); color: var(--orange-fire); }
+
+        .footer { background: var(--charcoal); color: var(--white); padding: 4rem 2rem 2rem; }
+        .footer-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+        .footer-brand p { opacity: 0.7; margin-top: 1rem; font-size: 0.95rem; }
+        .footer-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--orange-glow); }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-bottom { max-width: 1400px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.9rem; opacity: 0.6; }
+
+        @media (max-width: 1024px) { .footer-container { grid-template-columns: 1fr 1fr; } .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); } }
+        @media (max-width: 768px) { .nav-links { display: none; } .footer-container { grid-template-columns: 1fr; text-align: center; } }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html"><img src="images/logo.jpg" alt="Leamen Plumbing & Gas" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="plumbing.html">Plumbing</a></li>
+                <li><a href="bathrooms.html">Bathrooms</a></li>
+                <li><a href="water-heaters.html">Water Heaters</a></li>
+                <li><a href="water-treatment.html">Water Treatment</a></li>
+                <li><a href="gas-fitting.html">Gas Fitting</a></li>
+                <li><a href="emergency.html">Emergency</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="tel:7057952878" class="nav-phone">705-795-2878</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <p class="page-hero-tag">Our Work</p>
+        <h1 class="page-hero-title">Project Gallery</h1>
+        <p class="page-hero-text">Quality craftsmanship on every job. See our recent work throughout Simcoe County.</p>
+    </section>
+
+    <section class="gallery-section">
+        <div class="gallery-category">
+            <h2>Bathroom Renovations</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('images/bathroom-cedar.jpg');">
+                    <span class="gallery-item-label">Custom Shower with Cedar Ceiling</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('images/bathroom-vanity.jpg');">
+                    <span class="gallery-item-label">Double Vanity Installation</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('images/shower-detail.jpg');">
+                    <span class="gallery-item-label">Rain Head Shower System</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-category">
+            <h2>Laundry Rooms</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('images/laundry-patterned.jpg');">
+                    <span class="gallery-item-label">Laundry Room Plumbing</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('images/laundry-teal.jpg');">
+                    <span class="gallery-item-label">Utility Sink Installation</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('images/laundry-dark.jpg');">
+                    <span class="gallery-item-label">Modern Laundry Setup</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-category">
+            <h2>Mechanical Systems</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('images/mechanical-room.jpg');">
+                    <span class="gallery-item-label">Complete Mechanical Room</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('images/tankless-system.jpg');">
+                    <span class="gallery-item-label">Tankless Water Heater System</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('images/water-heater-filtration.jpg');">
+                    <span class="gallery-item-label">Water Heater & Filtration</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('images/sump-pumps.jpg');">
+                    <span class="gallery-item-label">Sump Pump Installation</span>
+                </div>
+                <div class="gallery-item" style="background-image: url('images/ro-system.jpg');">
+                    <span class="gallery-item-label">Under-Sink RO System</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <h3>Like What You See?</h3>
+        <p>Let's talk about your project. Free estimates available.</p>
+        <a href="tel:7057952878" class="cta-banner-phone">705-795-2878</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="images/logo.jpg" alt="Leamen Plumbing & Gas" style="height: 50px;">
+                <p>Simcoe County's trusted source for residential plumbing and gas services.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="plumbing.html">Plumbing</a></li>
+                    <li><a href="bathrooms.html">Bathrooms</a></li>
+                    <li><a href="water-heaters.html">Water Heaters</a></li>
+                    <li><a href="water-treatment.html">Water Treatment</a></li>
+                    <li><a href="gas-fitting.html">Gas Fitting</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Areas</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Orillia</a></li>
+                    <li><a href="#">Severn</a></li>
+                    <li><a href="#">Oro-Medonte</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:7057952878">705-795-2878</a></li>
+                    <li><a href="mailto:LPGplumbing1@gmail.com">LPGplumbing1@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2025 Leamen Plumbing & Gas. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
